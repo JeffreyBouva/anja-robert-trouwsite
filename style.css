@@ -1,49 +1,89 @@
-/* Nagebouwde look van het WordPress Twenty Twenty-Five-thema */
+/* Nagebouwde look van het WordPress-thema Twenty Twenty-Five.
+   Tokens (kleuren, lettergroottes, spacing) zijn overgenomen uit het originele thema. */
+
 :root {
-  --tekst: #111111;
-  --grijs: #757575;
-  --rand: #cccccc;
-  --accent: #1773cf;
-  --kolom: 645px;
+  /* Kleuren */
+  --base: #ffffff;
+  --contrast: #111111;
+  --accent-1: #ffee58;
+  --accent-2: #f6cff4;
+  --accent-3: #503aa8;
+  --accent-4: #686868;
+  --accent-5: #fbfaf3;
+
+  /* Lettergroottes (identiek aan het thema) */
+  --fs-small: 0.875rem;
+  --fs-medium: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.196), 1.125rem);
+  --fs-large: clamp(1.125rem, 1.125rem + ((1vw - 0.2rem) * 0.392), 1.375rem);
+  --fs-x-large: clamp(1.75rem, 1.75rem + ((1vw - 0.2rem) * 0.392), 2rem);
+  --fs-xx-large: clamp(2.15rem, 2.15rem + ((1vw - 0.2rem) * 1.333), 3rem);
+
+  /* Spacing (identiek aan het thema) */
+  --sp-30: 20px;
+  --sp-40: 30px;
+  --sp-50: clamp(30px, 5vw, 50px);
+  --sp-60: clamp(30px, 7vw, 70px);
+  --sp-70: clamp(50px, 7vw, 90px);
+  --sp-80: clamp(70px, 10vw, 140px);
+
+  --content: 645px;
+  --block-gap: 1.2rem;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: var(--tekst);
-  background: #ffffff;
-  font-size: 1.06rem;
-  line-height: 1.65;
+  font-family: Manrope, sans-serif;
+  font-size: var(--fs-large);
+  font-weight: 300;
+  letter-spacing: -0.1px;
+  line-height: 1.4;
+  color: var(--contrast);
+  background: var(--base);
   -webkit-font-smoothing: antialiased;
 }
 
+a:where(:not(.wp-element-button)) { color: currentColor; }
+a:where(:not(.wp-element-button)):hover { text-decoration: none; }
+
+/* ---- Pagina-layout (constrained, zoals het thema) ---- */
+
 .pagina {
-  max-width: var(--kolom);
+  max-width: var(--content);
   margin: 0 auto;
-  padding: 5rem 1.25rem 3rem;
+  padding: var(--sp-70) var(--sp-50) var(--sp-60);
+}
+
+/* Blokken hebben onderling 1.2rem ruimte, net als in het thema */
+.pagina > * { margin-block: var(--block-gap) 0; }
+.pagina > :first-child { margin-block-start: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  line-height: 1.125;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 2.9rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0 0 2.5rem;
+  font-size: var(--fs-xx-large);
+  text-align: center;
+  margin: 0 0 var(--sp-40);
 }
 
 h2 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 2.2rem 0 0.8rem;
+  font-size: var(--fs-x-large);
+  margin: var(--sp-40) 0 0.6rem;
 }
 
-p { margin: 0 0 1em; }
+h3 { font-size: var(--fs-large); }
+
+p { margin: 0 0 var(--block-gap); }
+
+strong { font-weight: 700; }
 
 .trouwfoto {
-  margin: 0 0 2rem;
+  margin: 0 0 var(--sp-40);
   text-align: center;
 }
 
@@ -54,12 +94,11 @@ p { margin: 0 0 1em; }
 
 .intro {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--sp-40);
 }
 
 ul {
-  margin: 0 0 1.2em;
+  margin: 0 0 var(--block-gap);
   padding-left: 1.4em;
 }
 
@@ -67,9 +106,7 @@ li { margin-bottom: 0.55em; }
 
 /* ---- Formulier ---- */
 
-.rsvp {
-  margin-top: 2.5rem;
-}
+.rsvp { margin-top: var(--sp-50); }
 
 .rsvp fieldset {
   border: 0;
@@ -80,8 +117,8 @@ li { margin-bottom: 0.55em; }
 .veldlabel,
 .naam-veld legend {
   display: block;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: var(--fs-small);
   margin-bottom: 0.5rem;
 }
 
@@ -99,8 +136,8 @@ li { margin-bottom: 0.55em; }
 }
 
 .subveld span {
-  font-size: 0.85rem;
-  color: var(--grijs);
+  font-size: var(--fs-small);
+  color: var(--accent-4);
   margin-top: 0.35rem;
 }
 
@@ -115,10 +152,11 @@ input[type="password"],
 textarea {
   width: 100%;
   max-width: 100%;
-  padding: 0.55rem 0.7rem;
+  padding: 0.6rem 0.75rem;
   font: inherit;
+  font-weight: 400;
   color: inherit;
-  border: 1px solid var(--rand);
+  border: 1px solid #d9d9d9;
   border-radius: 4px;
   background: #fff;
 }
@@ -127,15 +165,15 @@ input[type="email"] { max-width: 320px; }
 
 input:focus,
 textarea:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--contrast);
   outline-offset: 1px;
-  border-color: var(--accent);
+  border-color: var(--contrast);
 }
 
 .radio {
   display: block;
   margin-bottom: 0.4rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .radio input { margin-right: 0.5rem; }
@@ -143,23 +181,24 @@ textarea:focus {
 button[type="submit"] {
   font: inherit;
   font-weight: 500;
-  color: #fff;
-  background: var(--accent);
+  color: var(--base);
+  background: var(--contrast);
   border: 0;
-  border-radius: 3px;
-  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  padding: 0.7rem 1.6rem;
   cursor: pointer;
+  transition: opacity 0.15s ease;
 }
 
-button[type="submit"]:hover { background: #135ea9; }
+button[type="submit"]:hover { opacity: 0.85; }
 
 footer {
   border-top: 1px solid #eeeeee;
-  margin-top: 3rem;
-  padding: 1.5rem 1.25rem 2.5rem;
+  margin-top: var(--sp-60);
+  padding: var(--sp-40) var(--sp-50) var(--sp-50);
   text-align: center;
-  color: var(--grijs);
-  font-size: 0.9rem;
+  color: var(--accent-4);
+  font-size: var(--fs-small);
 }
 
 /* ---- Loginpagina ---- */
@@ -169,7 +208,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+  padding: var(--sp-50);
 }
 
 .login-kaart {
@@ -179,12 +218,12 @@ footer {
 }
 
 .login-kaart h1 {
-  font-size: 2rem;
+  font-size: var(--fs-x-large);
   margin-bottom: 1rem;
 }
 
 .login-kaart p {
-  color: var(--grijs);
+  color: var(--accent-4);
   margin-bottom: 1.6rem;
 }
 
@@ -197,7 +236,7 @@ footer {
 .fout {
   display: none;
   color: #b3261e;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   margin-top: 1rem;
 }
 
