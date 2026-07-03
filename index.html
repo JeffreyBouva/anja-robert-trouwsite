@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Wij gaan trouwen</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="pagina">
+    <h1>Wij gaan trouwen</h1>
+
+    <figure class="trouwfoto">
+      <img src="/foto.jpg" alt="Robert en Anja">
+    </figure>
+
+    <p class="intro"><strong>Wij trouwen op 29 augustus 2026 in de Kruitfabriek Muiden en nodigen jullie van harte uit om deze dag met ons te vieren.</strong></p>
+
+    <h2>Programma</h2>
+    <p>16.00 uur – Inloop</p>
+    <p>16.30 uur- Ceremonie</p>
+    <p>17.30 uur – Aansnijden van de bruidstaart en drinken op het huwelijk.</p>
+    <p>18.00 uur- Diner en daarna FEEST met livemuziek van &lsquo;Salsaband Leticia y su Rumbadam&rsquo; (tot 23.00u)</p>
+
+    <h2>Locatie</h2>
+    <ul>
+      <li>De Kruitfabriek Muiden Kruitpad 16, 1398CP, Muiden.</li>
+      <li>Ben je met de auto? Dan is de locatie gemakkelijk te bereiken vanaf de A1 (afslag Muiden). Er is voldoende gratis parkeergelegenheid.</li>
+      <li>Kom je met het OV? Vanaf het Amstelstation vertrekken ieder kwartier bussen naar Muiden. Lijn 320 (richting Hilversum)en lijn 329 (richting Almere Haven of station Weesp. Uitstappen halte P+R Vanaf daar is het ongeveer 10 minuten lopen.</li>
+    </ul>
+
+    <h2>Huwelijkscadeau?</h2>
+    <ul>
+      <li>We willen geen cadeaus, want we hebben écht alles wat we ons maar wensen kunnen. Maar als je tóch graag iets wilt geven zouden wij heel blij zijn met een kleine bijdrage voor het kopen van een mooie herinnering aan deze dag én aan onze huwelijksreis naar China. Wij denken daarbij aan een kunstwerk.</li>
+      <li>Daarvoor hebben we een aparte rekening geopend die door een gemachtigde wordt beheerd, zodat wij niet kunnen zien welk bedrag er wordt gestort.</li>
+      <li>Het rekeningnummer is: NL90 INGB 0119 1826 88, t.n.v. Robert en Anja</li>
+    </ul>
+
+    <h2>Aanwezigheid</h2>
+    <ul>
+      <li>We hopen natuurlijk dat je bij ons huwelijk aanwezig kunt zijn. Op het formulier hieronder kun je dat aangeven. Evenals dieetwensen en andere zaken.</li>
+    </ul>
+
+    <!-- Vervang JOUW_FORM_ID door het ID van je Formspree-formulier (zie README) -->
+    <form class="rsvp" action="https://formspree.io/f/JOUW_FORM_ID" method="POST">
+      <fieldset class="naam-veld">
+        <legend>Naam</legend>
+        <div class="naam-rij">
+          <label class="subveld">
+            <input type="text" name="voornaam" autocomplete="given-name" required>
+            <span>Voornaam</span>
+          </label>
+          <label class="subveld">
+            <input type="text" name="achternaam" autocomplete="family-name" required>
+            <span>Achternaam</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="veld">
+        <span class="veldlabel">E-mail</span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+
+      <fieldset class="veld">
+        <legend class="veldlabel">Geef hieronder aan of je komt</legend>
+        <label class="radio"><input type="radio" name="aanwezig" value="Ja" required> Ja</label>
+        <label class="radio"><input type="radio" name="aanwezig" value="Nee"> Nee</label>
+      </fieldset>
+
+      <label class="veld">
+        <span class="veldlabel">Opmerkingen</span>
+        <textarea name="opmerkingen" rows="5"></textarea>
+      </label>
+
+      <label class="veld">
+        <span class="veldlabel">Dieetwensen</span>
+        <textarea name="dieetwensen" rows="5"></textarea>
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Robert &amp; Anja · 29 augustus 2026 · De Kruitfabriek, Muiden</p>
+  </footer>
+</body>
+</html>
