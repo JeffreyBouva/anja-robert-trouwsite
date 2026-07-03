@@ -83,7 +83,7 @@ p { margin: 0 0 var(--block-gap); }
 strong { font-weight: 700; }
 
 .trouwfoto {
-  margin: 0 0 var(--sp-40);
+  margin: var(--sp-50) 0 var(--sp-40);
   text-align: center;
 }
 
